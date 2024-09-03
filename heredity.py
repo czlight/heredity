@@ -5,15 +5,17 @@ import sys
 PROBS = {
 
     # Unconditional probabilities for having gene
+    # used when we know nothing about a person's parents
     "gene": {
-        2: 0.01,
-        1: 0.03,
+        2: 0.01, # 1% chance of having 2 copies of gene
+        1: 0.03, # 3% chance of having 1 copy (and so on)
         0: 0.96
     },
 
     "trait": {
 
         # Probability of trait given two copies of gene
+        # whether a person has the trait depends on how many copies of gene they have
         2: {
             True: 0.65,
             False: 0.35
@@ -32,7 +34,8 @@ PROBS = {
         }
     },
 
-    # Mutation probability
+    # Mutation probability - gene mutates from having gene to not
+    # having the gene, and vice versa
     "mutation": 0.01
 }
 
@@ -42,6 +45,9 @@ def main():
     # Check for proper usage
     if len(sys.argv) != 2:
         sys.exit("Usage: python heredity.py data.csv")
+    # people maps each person's name to another dictionary containing
+    # info. about them including their name, their mother/father (if listed)
+    # and whether they are observed to have the train in question (True/False)
     people = load_data(sys.argv[1])
 
     # Keep track of gene and trait probabilities for each person
@@ -139,6 +145,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         * everyone in set `have_trait` has the trait, and
         * everyone not in set` have_trait` does not have the trait.
     """
+    
     raise NotImplementedError
 
 
