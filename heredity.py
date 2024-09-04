@@ -170,6 +170,8 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                 # person is not in one or two gene set; find probability they don't have gene
                 probabilities[person] = PROBS["gene"][0]
 
+        
+
 
 
 
