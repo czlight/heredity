@@ -158,29 +158,19 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
         # find probability of persons without parents
         if people[person]["father"] == None and people[person]["mother"] == None:
-            if person in one_gene and person in have_trait:
-                # check probability that they have 1 gene and has trait
+            if person in one_gene:
+                # check probability that they have 1 gene
                 print("check for parent", person, "with one gene and has trait")
                 probabilities[person] = PROBS["gene"][1]
-                #probabilities[person] *= PROBS["trait"][1][True]
-            elif person in one_gene and person not in have_trait:
-                # check probability that they have 1 gene and doesn't have trait
-                print("check for parent", person, "with one gene and not has trait")
-                probabilities[person] = PROBS["gene"][1]
-                #probabilities[person] *= PROBS["trait"][1][False]
-            elif person in two_genes and person in have_trait:
+
+            elif person in two_genes:
                 print("check for parent", person, "with two genes, has trait")
                 probabilities[person] = PROBS["gene"][2]
-                #probabilities[person] *= PROBS["trait"][2][True]
-            elif person in two_genes and person not in have_trait:
-                print("check for parent", person, "with two gened, not has trait")
-                probabilities[person] = PROBS["gene"][2]
-                #probabilities[person] *= PROBS["trait"][2][False]
+
             else:
                 print("check for parent", person, "with no genes")
-                # person is not in one or two gene set; find probability they don't have gene
+                # person is not in one or two gene set
                 probabilities[person] = PROBS["gene"][0]
-                #probabilities[person] *= PROBS["trait"][0][False]
 
         print(probabilities)
 
