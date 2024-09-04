@@ -190,12 +190,14 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
         # one parent has two genes, the other has one gene
         elif (people[person]["father"] in two_genes and people[person]["mother"] in one_gene) or (people[person]["father"] in one_gene and people[person]["mother"] in two_genes):
-            probabilities[person] =
-          #  if people[person] in two_genes:
-          #  elif people[person] in one_gene:
-          #  else:
-                #person has two genes, one of parents has two and other has one gene
-
+            if person in two_genes:
+                probabilities[person] =
+            if person in one_gene:
+                probabilities[person] =
+                # inherit one gene
+            else:
+                #inherit no genes
+                probabilities[person] = PROBS["mutation"] * PROBS["mutation"]
 
         # one parent has two genes, the other has none
         elif (people[person]["father"] in two_genes and people[person]["mother"]  not in two_genes and people[person]["mother"] not in one_gene) \
@@ -204,23 +206,39 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
 
         # both parents have one_gene
-       # elif people[person]["father"] in one_gene and people[person]["mother"] in one_gene:
-       #     if people[person] in two_genes:
-        #    elif people[person] in one_gene:
-       #     else:
+        elif people[person]["father"] in one_gene and people[person]["mother"] in one_gene:
+            if person in two_genes:
+                probabilities[person] =
+            if person in one_gene:
+                probabilities[person] =
+                # inherit one gene
+            else:
+                #inherit no genes
+                probabilities[person] =
 
         # one parent has one gene, the other parent has none
-       # elif (people[person]["father"] in one_gene and people[person]["mother"] not in two_genes and people[person]["mother"] not in one_gene) or \
-        #    (people[person]["mother"] in one_gene and people[person]["father"] not in two_genes and people[person]["father"] not in one_gene):
-        #    if people[person] in two_genes:
-         #   elif people[person] in one_gene:
-         #   else:
+        elif (people[person]["father"] in one_gene and people[person]["mother"] not in two_genes and people[person]["mother"] not in one_gene) or \
+            (people[person]["mother"] in one_gene and people[person]["father"] not in two_genes and people[person]["father"] not in one_gene):
+            if person in two_genes:
+                probabilities[person] =
+            if person in one_gene:
+                probabilities[person] =
+                # inherit one gene
+            else:
+                #inherit no genes
+                probabilities[person] =
+
 
         # neither parent has gene
-        #else:
-        #    if people[person] in two_genes:
-        #    elif people[person] in one_gene:
-           # else:
+        else:
+            if person in two_genes:
+                probabilities[person] =
+            if person in one_gene:
+                probabilities[person] =
+                # inherit one gene
+            else:
+                #inherit no genes
+                probabilities[person] =
 
         # check probability person has trait
         # two genes and has trait
