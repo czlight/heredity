@@ -188,7 +188,9 @@ def joint_probability(people, one_gene, two_genes, have_trait):
             if people[person] in two_genes:
                 # person and each of parents have two genes
 
-        elif (people[person]["father"] in two_genes and people[person]["mother"] in one_gene or people[person]["father"] in one_gene and people[person]["mother"] in two_genes:
+        elif (people[person]["father"] in two_genes and people[person]["mother"] in one_gene) or (people[person]["father"] in one_gene and people[person]["mother"] in two_genes):
+            if people[person] in two_genes:
+                #person has two genes, one of parents has two and other has one gene
 
         elif people[person]["father"] in two_genes and people[person]["mother"] in two_genes:
 
