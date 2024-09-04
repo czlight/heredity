@@ -227,17 +227,17 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
         # check probability person has trait
         # two genes and has trait
-        if people[person] in two_genes and people[person] in have_trait:
+        if person in two_genes and person in have_trait:
             probabilities[person] *= PROBS["trait"][2][True]
-        elif people[person] in two_genes and people[person] not in have_trait:
+        elif person in two_genes and person not in have_trait:
             probabilities[person] *= PROBS["trait"][2][False]
-        elif people[person] in one_gene and people[person] in have_trait:
+        elif person in one_gene and person in have_trait:
             probabilities[person] *= PROBS["trait"][1][True]
-        elif people[person] in one_gene and people[person] not in have_trait:
+        elif person in one_gene and person not in have_trait:
             probabilities[person] *= PROBS["trait"][1][False]
-        elif (people[person] not in one_gene and people[person] not in two_gene) and people[person] in have_trait:
+        elif (person not in one_gene and person not in two_genes) and person in have_trait:
             probabilities[person] *= PROBS["trait"][0][True]
-        elif (people[person] not in one_gene and people[person] not in two_gene) and people[person] not in have_trait:
+        elif (person not in one_gene and person not in two_genes) and person not in have_trait:
             probabilities[person] *= PROBS["trait"][0][False]
 
         print(probabilities)
