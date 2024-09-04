@@ -179,7 +179,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         # find probability of persons with parents
         # both parents have two genes
         if people[person]["father"] in two_genes and people[person]["mother"] in two_genes:
-            probabilities[person] = (1 - PROBS["mutation"]) * (1 - PROBS["mutation"]) + (1 - PROBS["mutation"]) * (1 - PROBS["mutation"])
+            probabilities[person] = (1 - PROBS["mutation"]) + (1 - PROBS["mutation"])
 
                 # person and each of parents have two genes
 
