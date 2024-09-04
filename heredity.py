@@ -193,7 +193,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
             if person in two_genes:
                 probabilities[person] = (1 - PROBS["mutation"]) * (.5 * (1 - PROBS["mutation"]) + (.5 * PROBS["mutation"]))
             if person in one_gene:
-                probabilities[person] =
+                probabilities[person] = (1 - PROBS["mutation"]) + (.5 * (1 - PROBS["mutation"]) + (.5 * PROBS["mutation"]))
                 # inherit one gene
             else:
                 #inherit no genes
