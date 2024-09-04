@@ -192,39 +192,38 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                 # person and each of parents have two genes
 
         # one parent has two genes, the other has one gene
-        """
-        elif (people[person]["father"] in two_genes and people[person]["mother"] in one_gene) or (people[person]["father"] in one_gene and people[person]["mother"] in two_genes):
-            if people[person] in two_genes:
-            elif people[person] in one_gene:
-            else:
+
+        #elif (people[person]["father"] in two_genes and people[person]["mother"] in one_gene) or (people[person]["father"] in one_gene and people[person]["mother"] in two_genes):
+          #  if people[person] in two_genes:
+          #  elif people[person] in one_gene:
+          #  else:
                 #person has two genes, one of parents has two and other has one gene
-        """
+
 
         # one parent has two genes, the other has none
         elif (people[person]["father"] in two_genes and people[person]["mother"]  not in two_genes and people[person]["mother"] not in one_gene) \
             or (people[person]["mother"] in two_genes and (people[person]["father"]  not in two_genes and people[person]["father"] not in one_gene)):
-                probabilities[person] = ((1 - PROBS["mutation"]) * (1 - PROBS["mutation"]) + (PROBS["mutation"] * PROBS["mutation"])
+                probabilities[person] = (1 - PROBS["mutation"]) * (1 - PROBS["mutation"]) + (PROBS["mutation"] * PROBS["mutation"])
 
-        """
+
         # both parents have one_gene
-        elif people[person]["father"] in one_gene and people[person]["mother"] in one_gene:
-            if people[person] in two_genes:
-            elif people[person] in one_gene:
-            else:
+       # elif people[person]["father"] in one_gene and people[person]["mother"] in one_gene:
+       #     if people[person] in two_genes:
+        #    elif people[person] in one_gene:
+       #     else:
 
         # one parent has one gene, the other parent has none
-        elif (people[person]["father"] in one_gene and people[person]["mother"] not in two_genes and people[person]["mother"] not in one_gene) or \
-            (people[person]["mother"] in one_gene and people[person]["father"] not in two_genes and people[person]["father"] not in one_gene):
-            if people[person] in two_genes:
-            elif people[person] in one_gene:
-            else:
+       # elif (people[person]["father"] in one_gene and people[person]["mother"] not in two_genes and people[person]["mother"] not in one_gene) or \
+        #    (people[person]["mother"] in one_gene and people[person]["father"] not in two_genes and people[person]["father"] not in one_gene):
+        #    if people[person] in two_genes:
+         #   elif people[person] in one_gene:
+         #   else:
 
         # neither parent has gene
-        else:
-            if people[person] in two_genes:
-            elif people[person] in one_gene:
-            else:
-        """
+        #else:
+        #    if people[person] in two_genes:
+        #    elif people[person] in one_gene:
+           # else:
 
 
 
