@@ -230,9 +230,11 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         elif (person not in one_gene and person not in two_genes) and person not in have_trait:
             probabilities[person] *= PROBS["trait"][0][False]
 
-        
 
-        print(probabilities)
+
+        print("end of looP!",probabilities)
+
+    totalProbabilities = 
 
 
 
