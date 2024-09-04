@@ -235,6 +235,11 @@ def joint_probability(people, one_gene, two_genes, have_trait):
             probabilities[person] *= PROBS["trait"][1][True]
         elif people[person] in one_gene and people[person] not in have_trait:
             probabilities[person] *= PROBS["trait"][1][False]
+        elif (people[person] not in one_gene and people[person] not in two_gene) and people[person] in have_trait:
+            probabilities[person] *= PROBS["trait"][0][True]
+        elif (people[person] not in one_gene and people[person] not in two_gene) and people[person] not in have_trait:
+            probabilities[person] *= PROBS["trait"][0][False]
+
 
 
 
