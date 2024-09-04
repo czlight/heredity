@@ -135,6 +135,7 @@ def powerset(s):
 
 
 def joint_probability(people, one_gene, two_genes, have_trait):
+    print("joint_probability() function called!")
     """
     Compute and return a joint probability.
 
@@ -151,6 +152,9 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         for person in people
     }
     print(people)
+    print("one_gene", one_gene)
+    print("two_genes", two_genes)
+    print("have_trait", have_trait)
     for person in people:
 
 
