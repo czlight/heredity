@@ -152,7 +152,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         for person in people
     }
 
-    totalProbabilities = 0
+    totalProbabilities = 1.0
     print(people)
 
     for person in people:
@@ -235,6 +235,8 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
 
         print("end of looP! for person", person, "probabilities are",probabilities)
+
+        print("probabilities[person] is equal to", probabilities[person])
         totalProbabilities *= probabilities[person]
         print("totalProbabilities within llop:", totalProbabilities)
 
