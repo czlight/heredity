@@ -171,9 +171,9 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                 probabilities[person] = PROBS["gene"][0]
 
         if person in have_trait:
-            probabilities[person] = probabilities[person] * PROBS["trait"][0][True]
+            probabilities[person] *=  PROBS["trait"][0][True]
         else:
-            probabilities[person] = probabilities[person] * PROBS["trait"][0][False]
+            probabilities[person] *= PROBS["trait"][0][False]
 
 
 
