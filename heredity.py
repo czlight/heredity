@@ -184,7 +184,9 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
         print(probabilities)
 
-        
+        if people[person]["father"] in two_genes
+
+
 
 
 
