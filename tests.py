@@ -26,7 +26,7 @@ def main():
         for person in people
     }
 
-    joint_probability(people, {"Harry"}, {"Lily"}, {"Lily"})
+    joint_probability(people, {"Harry"}, {"James"}, {"James"})
     """
     # Loop over all sets of people who might have the trait
     names = set(people)
