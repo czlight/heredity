@@ -152,12 +152,8 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         for person in people
     }
     print(people)
-    print("one_gene", one_gene)
-    print("two_genes", two_genes)
-    print("have_trait", have_trait)
+
     for person in people:
-
-
         # reset probability for each new person in for loop
 
         # find gene probability of persons without parents
@@ -187,6 +183,8 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                 probabilities[person] *= PROBS["trait"][0][False]
 
         print(probabilities)
+
+        
 
 
 
