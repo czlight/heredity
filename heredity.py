@@ -192,8 +192,8 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         # one parent has two genes, the other has one gene
         elif (people[person]["father"] in two_genes and people[person]["mother"] in one_gene) or (people[person]["father"] in one_gene and people[person]["mother"] in two_genes):
             if person in two_genes:
-                probabilities[person] = (1 - PROBS["mutation"]) * (.5 * (1 - PROBS["mutation"]) + (.5 * PROBS["mutation"]))
-                (.99 * .5 *.99) + 
+                probabilities[person] = (1 - PROBS["mutation"]) * (.5 * (1 - PROBS["mutation"]) + (.5 * PROBS["mutation"])) # 
+                (.99 * .5 *.99) + (.99 * .5 * .01)
             if person in one_gene:
                 #two scenarios: 1) inherit one gene from 1st parent and not the 2nd
                 # 2) inherit one gene from 2nd parent and not the first; add these probabilities together
