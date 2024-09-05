@@ -235,7 +235,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                 # inherit one gene
             else:
                 #inherit no genes
-                probabilities[person] =(.49 * .99) + (.99 * .01)
+                probabilities[person] =(.5 * .01 * .99) + (.99 * .01)
 
 
         # neither parent has gene (will this run for people without parents? if it does it will )
