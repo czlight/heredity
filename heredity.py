@@ -213,8 +213,8 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                     # (.99 * .5 * .01) + (.99 * .5 * .01) = .0099
                 if person in one_gene:
                     #one gene
-                    probabilities[person] = (1- PROBS["mutation"] * (1 - PROBS["mutation"]) + (PROBS["mutation"] * (PROBS["mutation"])))
-                    # (.99 * .5 *.99) + (.01 * .5 * .01) OR (.99 * .01)
+                    probabilities[person] = (1- PROBS["mutation"] * (1 - PROBS["mutation"]) + (PROBS["mutation"] * (PROBS["mutation"]))) # = 
+                    # (.99 * .5 *.99) + (.01 * .5 * .01) # = 0.4901
                 else:
                     #person has no genes
                     probabilities[person] = .01 * .01
