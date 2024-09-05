@@ -208,6 +208,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
                     probabilities[person] = (1 - PROBS["mutation"]) * PROBS["mutation"])
                 if person in one_gene:
                     #one gene
+                    probabilities[person] = 
                 else:
                     #person has no genes
 
