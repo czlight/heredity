@@ -239,7 +239,8 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
 
         # neither parent has gene
-        else:
+        elif (people[person]["father"] not in one_gene and people[person]["father"] not in two_genes and people[person]["mother"] not in one_gene \
+            and people[person]["mother"] not in two_genes):
             if person in two_genes:
                 probabilities[person] =
             if person in one_gene:
