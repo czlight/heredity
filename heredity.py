@@ -227,6 +227,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
             if person in two_genes:
                 probabilities[person] = (.5 * (1 - PROBS["mutation"])) * (.5 * (1 - PROBS["mutation"])) # = .245025
                 # (.5 * .99) + ()
+                # (.495 * .495) * (.495 * .005) * (.005 * .495) * (.005 * .005)
 
             if person in one_gene:
                 probabilities[person] = (.5 * .49) + (.5 * .49) # =0.49 previously multiplied these and got .245
