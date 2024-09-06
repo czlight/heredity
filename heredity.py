@@ -225,9 +225,10 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         # both parents have one_gene
         elif people[person]["father"] in one_gene and people[person]["mother"] in one_gene:
             if person in two_genes:
-                probabilities[person] = (.5 * (1 - PROBS["mutation"])) * (.5 * (1 - PROBS["mutation"])) # = .245025
+                #probabilities[person] = (.5 * (1 - PROBS["mutation"])) * (.5 * (1 - PROBS["mutation"])) # = .245025
                 # (.5 * .99) + ()
                 # (.495 * .495) + (.495 * .005) + (.005 * .495) + (.005 * .005)
+                probabilities[person] = .25
 
             if person in one_gene:
                 probabilities[person] = (.5 * .49) + (.5 * .49) # =0.49 previously multiplied these and got .245
