@@ -240,7 +240,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         elif (people[person]["father"] in one_gene and people[person]["mother"] not in two_genes and people[person]["mother"] not in one_gene) or \
             (people[person]["mother"] in one_gene and people[person]["father"] not in two_genes and people[person]["father"] not in one_gene):
             if person in two_genes:
-                probabilities[person] = .5 * .99 * .01 # 
+                probabilities[person] = .5 * .49 * .01 #
             if person in one_gene:
                 probabilities[person] = (.99 * .5 * .99) + (.01 * .5 * .01) # = .4901
                 # inherit one gene
