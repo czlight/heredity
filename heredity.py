@@ -306,7 +306,19 @@ def update(probabilities, one_gene, two_genes, have_trait, p):
     Which value for each distribution is updated depends on whether
     the person is in `have_gene` and `have_trait`, respectively.
     """
-    raise NotImplementedError
+
+    for person in probabilities:
+        if person not in one_gene and person not in two_genes:
+            probabilities[person]["gene"][0] += p
+        if person in one_gene:
+            probabilities[person]["gene"][1] += p
+        if person in two_genes:
+            probabilities[person]["gene"][2] += p
+        if person in have_trait:
+            probabilities[person]["trait"][True] += p
+        if person not in have_trait:
+            probabilities[person]["trait"][False] += p
+
 
 
 def normalize(probabilities):
@@ -314,7 +326,22 @@ def normalize(probabilities):
     Update `probabilities` such that each probability distribution
     is normalized (i.e., sums to 1, with relative proportions the same).
     """
-    raise NotImplementedError
+    # strategy is to calculate the total sum of all the probabilities
+    # then divide each individual probability by the total sum
+
+    for person in probabilities:
+        # normalize gene distribution for each person
+        totalGeneProbSum = probabilities[person]["gene"][0] + probabilities[person]["gene"][1] + probabilities[person]["gene"][2]
+        probabilities[person]["gene"][0] = probabilities[person]["gene"][0] / totalGeneProbSum
+        probabilities[person]["gene"][1] = probabilities[person]["gene"][1] / totalGeneProbSum
+        probabilities[person]["gene"][2] = probabilities[person]["gene"][2] / totalGeneProbSum
+
+
+        # normalize trait distribution for each person
+        totalTraitProbSum = probabilities[person]["trait"][True] + probabilities[person]["trait"][False]
+        probabilities[person]["trait"][True] = probabilities[person]["trait"][True] / totalTraitProbSum
+        probabilities[person]["trait"][False] = probabilities[person]["trait"][False] / totalTraitProbSum
+
 
 
 if __name__ == "__main__":
